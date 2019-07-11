@@ -6,8 +6,11 @@ import Loading from './Loading'
 class DogCard extends React.Component {
 
   constructor(props) {
+
     super(props)
+    
     this.state = {
+
       dog: []
     }
   }
