@@ -10,14 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aimanmallah/API-project.git"
+    "url": "git+https://github.com/valeriux/SEI-Project-02.git"
+
+
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aimanmallah/API-project/issues"
+    "url": "https://github.com/valeriux/SEI-Project-02/issues"
   },
-  "homepage": "https://github.com/aimanmallah/API-project#readme",
+  "homepage": "https://github.com/valeriux/SEI-Project-02#readme",
   "dependencies": {
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
