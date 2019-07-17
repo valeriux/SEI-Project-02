@@ -29,6 +29,11 @@ class DogShow extends React.Component {
       })
   }
 
+
+
+
+
+
   render() {
     if(!this.state.dog) return  <Loading />
     console.log(this.state.name)

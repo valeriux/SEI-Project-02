@@ -38,7 +38,6 @@ class SearchDog extends React.Component {
             this.setState({ dog })
           })
 
-        console.log(this.res.data.breed_id, 'FELPA')
       })
   }
 

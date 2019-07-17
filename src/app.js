@@ -21,7 +21,7 @@ class App extends React.Component {
         <NavBar />
         <div>
           <Switch>
-            <Route path="/dogs/search" component={SearchDog} />
+
             <Route path='/dogs/:id' component={DogShow} />
             <Route path="/dogs" component={DogIndex} />
             <Route exact path='/' component={Home} />

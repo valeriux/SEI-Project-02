@@ -9,6 +9,7 @@ class DogIndex extends React.Component {
 
   constructor() {
     super()
+
     this.state = {
       dogs: null
     }

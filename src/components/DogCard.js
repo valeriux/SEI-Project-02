@@ -6,12 +6,10 @@ import Loading from './Loading'
 class DogCard extends React.Component {
 
   constructor(props) {
-
     super(props)
-    
     this.state = {
-
       dog: []
+
     }
   }
 
@@ -29,6 +27,9 @@ class DogCard extends React.Component {
 
   }
 
+
+
+
   render() {
     console.log(this.props.id, 'DIDIIIIIIIohohohoho')
     if(!this.state.dog) return <Loading />
@@ -36,13 +37,13 @@ class DogCard extends React.Component {
       <div className="card">
         <div className="card-image">
           <figure className="image is-5by4">
-            <Link to={`/dogs/${this.props.id}`}>
-              {<img src={this.state.dog.image} alt={this.props.name} />}
-            </Link>
+
+            <img src={this.state.dog.image || []} alt={this.props.name} />
+
           </figure>
         </div>
 
-        <Link to={`/dogs/${this.props.id}`}><div id="subtitle_is5" className="subtitle is-size-4">{this.props.name}</div></Link>
+        <div id="subtitle_is5" className="subtitle is-size-4">{this.props.name}</div>
       </div>
     )
   }
