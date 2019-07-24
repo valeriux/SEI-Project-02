@@ -21,7 +21,7 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: './images/background-imgaes/[name].[ext]'
+            name: './media/[name].[ext]'
           }
         }
       },

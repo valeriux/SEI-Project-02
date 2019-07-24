@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Loading from './Loading'
 
@@ -9,9 +8,10 @@ class DogCard extends React.Component {
     super(props)
     this.state = {
       dog: []
-
     }
+
   }
+
 
   componentDidMount(){
     const dog = {}
@@ -21,7 +21,8 @@ class DogCard extends React.Component {
       }
     })
       .then(res => {
-        dog.image = res.data[0].url
+        if(!res.data[0]) dog.image = null
+        else dog.image = res.data[0].url
         this.setState({ dog })
       })
 
@@ -31,20 +32,24 @@ class DogCard extends React.Component {
 
 
   render() {
-    console.log(this.props.id, 'DIDIIIIIIIohohohoho')
     if(!this.state.dog) return <Loading />
+
+
     return(
+
+
       <div className="card">
         <div className="card-image">
-          <figure className="image is-5by4">
-
-            <img src={this.state.dog.image || []} alt={this.props.name} />
-
+          <figure className="image is-5by4" >
+            <img src={this.state.dog.image? this.state.dog.image : 'media/no_image_available2.gif'}
+              alt={this.props.name} />
           </figure>
-        </div>
 
-        <div id="subtitle_is5" className="subtitle is-size-4">{this.props.name}</div>
+
+          <div id="subtitle_is5" className="subtitle is-size-4">{this.props.name}</div>
+        </div>
       </div>
+
     )
   }
 }

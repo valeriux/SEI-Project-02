@@ -23,29 +23,29 @@ class DogShow extends React.Component {
           }
         })
           .then(res => {
-            dog.image = res.data[0].url
+            if(!res.data[0]) dog.image = null
+            else dog.image = res.data[0].url
             this.setState({ dog })
           })
       })
   }
 
 
-
-
-
-
   render() {
     if(!this.state.dog) return  <Loading />
     console.log(this.state.name)
+
     return(
       <div className="container" id="section_dog_show">
         <section className="section" id="section_dog_show">
           <div className="columns">
-            <div className="column is-half-desktop is-full-tablet">
-              <figure className="image is-4by4">
-                <img src={this.state.dog.image} alt={this.state.dog.name} className="dog-show-image"/>
+            <div className="column is-half-desktop is-full-tablet" >
+              <figure className="image is-4by4" >
+                <img src={this.state.dog.image? this.state.dog.image : 'media/no_image_available2.gif'} alt={this.state.dog.name} className="dog-show-image"/>
+                <figcaption className="no_dog" > No Image Available</figcaption>
               </figure>
             </div>
+
             <div className="column is-two-thirds-desktop">
               <div className="title is-3" id="dog_show_title">{this.state.dog.name}</div>
               <hr id="hr1"/ >
@@ -62,6 +62,10 @@ class DogShow extends React.Component {
         </section>
 
       </div>
+
+
+
+
 
     )
   }

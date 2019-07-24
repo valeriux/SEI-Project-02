@@ -42,7 +42,7 @@ body {
 
 
 #background_main{
-  background-image: url('/media/cat_dog1.png');
+  background-image: url('./media/cat_dog1.png');
 }
 
 #div_main{
@@ -128,6 +128,23 @@ body {
   font-size: 1.6em;
 }
 
+
+.no_dog {
+  font-family: $fourth-font;
+  font-size: 20px;
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.no_dog_image {
+  padding-bottom: 40px;
+}
+
+
+.no-image {
+  display: none;
+}
 /*Effect to move the image*/
 @-webkit-keyframes spaceboots {
     0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
@@ -194,7 +211,7 @@ img.randomdog-show-image {
 
 div {
   .title{
-    font-family: $primary-font;
+    font-family: $fourth-font;
     color: $primary-color;
 
   }

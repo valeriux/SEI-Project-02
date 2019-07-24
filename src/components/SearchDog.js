@@ -34,12 +34,16 @@ class SearchDog extends React.Component {
           params: { breed_id: value }
         })
           .then(res => {
-            dog.image = res.data[0].url
+            if(!res.data[0]) dog.image = null
+            else dog.image = res.data[0].url
             this.setState({ dog })
           })
 
       })
   }
+
+
+
 
   render() {
     if(!this.state.dogs) return <Loading />
@@ -67,7 +71,7 @@ class SearchDog extends React.Component {
             <div className="columns">
               <div className="column is-half-desktop is-full-tablet">
                 <figure className="image is-4by4">
-                  <img src={this.state.dog.image} alt={this.state.dog.name} className="dog-show-image"/>
+                  <img src={this.state.dog.image? this.state.dog.image : 'media/no_image_available2.gif'} alt={this.state.dog.name} className="dog-show-image"/>
                 </figure>
               </div>
               <div className="column is-two-thirds-desktop">
