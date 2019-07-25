@@ -41,8 +41,7 @@ class DogShow extends React.Component {
           <div className="columns">
             <div className="column is-half-desktop is-full-tablet" >
               <figure className="image is-4by4" >
-                <img src={this.state.dog.image? this.state.dog.image : 'media/no_image_available2.gif'} alt={this.state.dog.name} className="dog-show-image"/>
-                <figcaption className="no_dog" > No Image Available</figcaption>
+                <img src={this.state.dog.image? this.state.dog.image : 'media/no_image_available2.gif' } alt={this.state.dog.name} className="dog-show-image"/>
               </figure>
             </div>
 
@@ -62,10 +61,6 @@ class DogShow extends React.Component {
         </section>
 
       </div>
-
-
-
-
 
     )
   }
