@@ -5,7 +5,6 @@ import Loading from './Loading'
 class DogShow extends React.Component {
   constructor(props) {
     super(props)
-
     this.state = {
       dog: null
     }
@@ -29,7 +28,6 @@ class DogShow extends React.Component {
           })
       })
   }
-
 
   render() {
     if(!this.state.dog) return  <Loading />

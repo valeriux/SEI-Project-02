@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import Select from 'react-select'
 import Loading from './Loading'
+import { withRouter } from 'react-router-dom'
+
 
 class SearchDog extends React.Component {
 
@@ -21,24 +23,17 @@ class SearchDog extends React.Component {
   }
 
   loadDogs(){
-    fetch('https://api.thedogapi.com/v1/breeds')
-      .then(res  => res.json())
-      .then(data => this.setState({ dogs: data }))
+    axios.get('https://api.thedogapi.com/v1/breeds')
+      .then(res => this.setState({ dogs: res.data }))
   }
 
   handleChange({ value }) {
+
     axios.get(`https://api.thedogapi.com/v1/breeds/${value}`)
       .then(res => {
-        const dog = res.data
-        axios.get('https://api.thedogapi.com/v1/images/search', {
-          params: { breed_id: value }
-        })
-          .then(res => {
-            if(!res.data[0]) dog.image = null
-            else dog.image = res.data[0].url
-            this.setState({ dog })
-          })
+        this.props.history.push(`/dogs/${res.data.id}`)
 
+        console.log(res.data.id, 'NEGRA MULA')
       })
   }
 
@@ -94,4 +89,4 @@ class SearchDog extends React.Component {
   }
 }
 
-export default SearchDog
+export default withRouter(SearchDog)

@@ -12,7 +12,6 @@ class DogCard extends React.Component {
 
   }
 
-
   componentDidMount(){
     const dog = {}
     axios.get('https://api.thedogapi.com/v1/images/search', {
@@ -27,8 +26,6 @@ class DogCard extends React.Component {
       })
 
   }
-
-
 
 
   render() {
